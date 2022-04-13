@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package simple_grpc;
+
+option go_package = "pb;gen";
+
+message Message {
+  string body = 1;
+}
+
+service ChatService {
+  rpc SayHello( Message) returns (Message) {}
+}
